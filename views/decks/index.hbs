@@ -1,0 +1,27 @@
+<h1>Browse Decks</h1>
+<div class="row">
+    {{#each decks}}
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    {{{editIcon user ../user _id}}}
+                </div>
+                <div class="card-content center-align">
+                    <h5>{{name}}</h5>
+                    <h6>{{commander}}</h6>
+                    <p>{{stripTags (truncate desc 150)}}</p>
+                    <br>
+                    <div class="chip">
+                        <img src="{{user.image}}" alt="user profile pic">
+                        <a href="/decks/user/{{user._id}}">{{user.displayName}}</a>
+                    </div>
+                </div>
+                <div class="card-action center-align">
+                    <a href="/decks/{{_id}}" class="btn grey">More Details...</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <p>No Decks to Display</p>
+    {{/each}}
+</div>

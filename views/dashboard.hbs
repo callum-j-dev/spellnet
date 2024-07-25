@@ -1,3 +1,38 @@
 <h6>Dashoard</h6>
 <h3>Welcome, {{name}}</h3>
 <p>Here are your decks</p>
+{{#if decks}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Deck Name</th>
+                <th>Commander</th>
+                <th>Date</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each decks}}
+                <tr>
+                    <td><a href="/decks/{{_id}}">{{name}}</a></td>
+                    <td><span class="dash-status">{{commander}}</span></td>
+                    <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                    <td><a href="{{url}}" class="btn" target="_blank">Decklist</a></td>
+                    <td>
+                        <a href="/decks/edit/{{_id}}" class="btn"><i class="fas fa-edit"></i></a>
+                    </td>
+                    <td>
+                        <form action="/decks/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn red" type="submit"><i class="fas fa-trash"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You have not created any decks.</p>
+{{/if}}

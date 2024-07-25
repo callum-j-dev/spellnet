@@ -13,11 +13,11 @@ const DeckSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    commanderArt: {
-        type: String,
-        required: false
-    },
-    deckUrl: {
+    // commanderArt: {
+    //     type: String,
+    //     required: false
+    // },
+    url: {
         type: String,
         required: false
     },
@@ -35,7 +35,8 @@ const DeckSchema = new mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     createdAt: {
         type: Date,

@@ -1,0 +1,40 @@
+<h3>Add Deck</h3>
+<div class="row">
+    <form action="/decks" method="post" class="col s12">
+        
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="name" name="name">
+                <label for="name">Deck Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="commander" name="commander">
+                <label for="commander">Commander</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="url" name="url">
+                <label for="url">Deck List URL</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Describe your Deck:</h5>
+                <textarea name="desc" id="desc"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+
+
+    </form>
+</div>

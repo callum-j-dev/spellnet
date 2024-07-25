@@ -1,0 +1,40 @@
+<h3>Edit Deck</h3>
+<div class="row">
+    <form action="/decks/{{deck._id}}" method="post" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="name" name="name" value="{{deck.name}}">
+                <label for="name">Deck Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="commander" name="commander" value="{{deck.commander}}">
+                <label for="commander">Commander</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="url" name="url" value="{{deck.url}}">
+                <label for="url">Deck List URL</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Describe your Deck:</h5>
+                <textarea name="desc" id="desc">{{deck.desc}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+
+
+    </form>
+</div>
