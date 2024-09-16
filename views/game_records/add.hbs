@@ -1,0 +1,118 @@
+<h3>Create Game Record</h3>
+<div class="row">
+    {{!-- {{#each decks}}
+        <h3>{{commander}}, {{name}}</h3>
+    {{/each}} --}}
+
+    {{!-- <div class="deck-field" data-decks-input="{{decks}}"></div>
+
+    {{#each decks}}
+        <div class="deck-entry" data-deck-id="{{_id}}" data-deck-name="{{name}}" data-deck-commander="{{commander}}"></div>
+    {{/each}} --}}
+
+    {{!-- <select id="deck-select" name="deck-select">
+        <option value="" disabled selected>Choose a deck:</option>
+    </select>
+    <button id="add-deck-btn" class="btn green">+ Add Deck</button> --}}
+
+
+
+
+    
+    <form action="/game_records" method="post" class="col s12">
+       
+        <div class="row">
+            <div class="input-field">
+                <select class="deck-select" id="deck-1" name="deck-1">
+                    <option value="" disabled selected>Choose a deck</option>
+                {{#each decks}}
+                    <option value="{{_id}}">{{commander}} || {{name}}</option>
+                {{/each}}
+                    <option value="">None</option>
+                </select>
+                <label for="deck-1">Deck Select Player 1</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field">
+                <select class="deck-select" id="deck-2" name="deck-2">
+                    <option value="" disabled selected>Choose a deck</option>
+                {{#each decks}}
+                    <option value="{{_id}}">{{commander}} || {{name}}</option>
+                {{/each}}
+                    <option value="">None</option>
+                </select>
+                <label for="deck-2">Deck Select Player 2</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field">
+                <select class="deck-select" id="deck-3" name="deck-3">
+                    <option value="" disabled selected>Choose a deck</option>
+                {{#each decks}}
+                    <option value="{{_id}}">{{commander}} || {{name}}</option>
+                {{/each}}
+                    <option value="">None</option>
+                </select>
+                <label for="deck-3">Deck Select Player 3</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field">
+                <select class="deck-select" id="deck-4" name="deck-4">
+                    <option value="" disabled selected>Choose a deck</option>
+                {{#each decks}}
+                    <option value="{{_id}}">{{commander}} || {{name}}</option>
+                {{/each}}
+                    <option value="">None</option>
+                </select>
+                <label for="deck-4">Deck Select Player 4</label>
+            </div> 
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select class="deck-select" id="winner" name="winner">
+                    <option value="" disabled selected>Choose a deck</option>
+                {{#each decks}}
+                    <option value="{{_id}}">{{commander}} || {{name}}</option>
+                {{/each}}
+                    <option value="">Draw</option>
+                </select>
+                <label for="winner">Select Winner</label>
+            </div> 
+        </div>
+
+         <button class="btn green">Create Game Record</button>
+    </form>
+</div>
+<script>
+    /* console.log('test');
+    const decksElems = document.querySelectorAll('.deck-entry');
+    const addDeckBtn = document.querySelector('#add-deck-btn');
+    const decksSelected = [];
+
+    let selected = '';
+
+    const decks = [];
+    decksElems.forEach(deck => {
+        decks.push({
+            id: deck.dataset.deckId,
+            name: deck.dataset.deckName,
+            commander: deck.dataset.deckCommander
+        })
+    });
+
+    const deckSelectDropdown = document.querySelector('#deck-select');
+    decks.forEach(deck => {
+        deckSelectDropdown.add(new Option(`${deck.commander} || ${deck.name}`, deck.id));
+    })
+
+    console.log(decks); */
+
+
+</script>
+

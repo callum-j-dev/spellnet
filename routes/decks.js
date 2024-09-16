@@ -3,6 +3,7 @@ const router = express.Router();
 const { ensureAuth } = require('../middleware/auth');
 
 const Deck = require('../models/Deck');
+const GameRecord = require('../models/GameRecord');
 
 // @desc    Show add page
 // @route   GET /decks/add
@@ -24,7 +25,7 @@ router.post('/', ensureAuth, async (req, res) => {
 })
 
 // @desc    Show all decks
-// @route   GET /decks/add
+// @route   GET /decks/index
 router.get('/', ensureAuth, async (req, res) => {
     try {
         const decks = await Deck.find()
@@ -53,8 +54,25 @@ router.get('/:id', ensureAuth, async (req, res) => {
             return res.render('error/404');
         }
 
+        let wins = await GameRecord.find({
+            winner: req.params.id
+        });
+
+        let games = await GameRecord.find({
+            decks: req.params.id
+        });
+
+        let gamesCount = games.length;
+        let winCount = wins.length;
+        let lossCount = gamesCount - winCount;
+
+        
+
         res.render('decks/show', {
-            deck
+            deck,
+            gamesCount,
+            winCount,
+            lossCount
         });
 
 

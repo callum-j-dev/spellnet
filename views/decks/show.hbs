@@ -3,17 +3,26 @@
         <h3>{{deck.name}}
             <small>{{{editIcon deck.user user deck.id false}}}</small>
         </h3>
-        <div class="card story">
+        <div class="card deck">
             <div class="card-content">
                 <span class="card-title">{{formatDate date 'MMMM Do YYYY'}}</span>
                 {{{deck.desc}}}
+            </div>
+    </div>
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Deck Stats</span>
+                <p><strong>Games Played:</strong> {{gamesCount}}</p>
+                <p><strong>Wins:</strong> {{winCount}}</p>
+                <p><strong>Losses:</strong> {{lossCount}}</p>
             </div>
         </div>
     </div>
     <div class="col s12 m4">
         <div class="card center-align">
             <div class="card-content">
-                <span class="card-title">{{deck.name}}</span>
+                <span class="card-title">{{deck.user.displayName}}</span>
                 <img src="{{deck.user.image}}" referrerpolicy="no-referrer" class="circle responsive-img img-small">
             </div>
             <div class="card-action">

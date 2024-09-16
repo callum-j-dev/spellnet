@@ -12,6 +12,7 @@
 <body>
     {{> _header}}
     {{> _add_btn}}
+    
 
     <div class="container">
         {{{body}}}
@@ -21,7 +22,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js" integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
 
     <script>
+        // Initialize floating action buttons
+        //document.addEventListener('DOMContentLoaded', function() {
+            //let elems = document.querySelectorAll('.fixed-action-btn');
+            //let instances = M.FloatingActionButton.init(elems, options);
+        //});
+
+        M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'));
+
         M.Sidenav.init(document.querySelector('.sidenav'));
+        M.FormSelect.init(document.querySelectorAll('.deck-select'))
         // M.FormSelect.init(document.querySelector('#status'))
 
         CKEDITOR.replace('desc', {

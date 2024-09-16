@@ -2,6 +2,10 @@ p {
     margin: 10px 0 !important;
 }
 
+.card {
+    margin-bottom: 5px;
+}
+
 .login-container {
     width: 400px;
     margin-top: 50px;
@@ -20,3 +24,8 @@ p {
 .img-small {
     width: 180px;
 }
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
