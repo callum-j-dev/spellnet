@@ -34,4 +34,7 @@ module.exports = {
             ' selected="selected"$&'
         )
     },
+    json: function(context) {
+        return JSON.stringify(context);
+    }
 }

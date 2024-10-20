@@ -24,8 +24,14 @@ p {
 .img-small {
     width: 180px;
 }
+
 .group:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
+
+/* .disabled span {
+    text-decoration: line-through;
+    color: grey;
+} */
